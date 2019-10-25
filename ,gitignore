@@ -1,7 +1,3 @@
-
-# Created by https://www.gitignore.io/api/linux,python,django,pycharm+all,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=linux,python,django,pycharm+all,visualstudiocode
-
 ### Django ###
 *.log
 *.pot
@@ -245,6 +241,26 @@ modules.xml
 
 # pyenv
 
+### venv ###
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ll]ib64
+[Ll]ocal
+[Ss]cripts
+pyvenv.cfg
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-selfcheck.json
+
 # pipenv
 #   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
@@ -277,5 +293,3 @@ modules.xml
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
-
-# End of https://www.gitignore.io/api/linux,python,django,pycharm+all,visualstudiocode
