@@ -3,6 +3,13 @@ from rest_framework import serializers
 from movies_api.models import Movie, Comment
 
 
+class MovieTitleSerializer(serializers.Serializer):
+    """
+    Serializer for validation movie title
+    """
+    title = serializers.CharField()
+
+
 class MovieSerializer(serializers.ModelSerializer):
     """
     Serializer for movie models
@@ -20,4 +27,4 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = '__all__'
+        fields = ['movie', 'text', 'author']
