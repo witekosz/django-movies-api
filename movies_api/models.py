@@ -16,9 +16,9 @@ class Movie(models.Model):
     """
     Model for storing fetched movies
     """
-    title = models.CharField(max_length=200)
-    released = models.DateField()
-    runtime = models.PositiveSmallIntegerField()
+    title = models.CharField(max_length=200, unique=True)
+    released = models.DateField(null=True)
+    runtime = models.PositiveSmallIntegerField(null=True)
 
     genre = models.TextField()
     director = models.CharField(max_length=200)
@@ -26,10 +26,10 @@ class Movie(models.Model):
     actors = models.TextField()
     plot = models.TextField()
 
-    language = models.CharField(max_length=50)
-    country = models.CharField(max_length=50)
+    language = models.CharField(max_length=200)
+    country = models.CharField(max_length=200)
     awards = models.TextField()
-    poster = models.URLField()
+    poster = models.URLField(null=True)
 
 
 class Comment(TimeModel):
