@@ -31,11 +31,17 @@ class Movie(models.Model):
     awards = models.TextField()
     poster = models.URLField(null=True)
 
+    def __str__(self):
+        return "%s %s" % (self.title, self.released if self.released else "")
+
 
 class Comment(TimeModel):
     """
     Model for movie comments
     """
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    movie = models.ForeignKey(Movie, related_name='movies', on_delete=models.CASCADE)
     text = models.TextField()
-    author = models.CharField(max_length=50)
+    author = models.CharField(max_length=50, blank=True)
+
+    def __str__(self):
+        return "%s %s" % (self.movie, self.author if self.author else "")
