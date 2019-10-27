@@ -12,7 +12,6 @@ COPY requirements.txt /app/
 RUN apk update \
     && apk add --virtual build-deps gcc python3-dev musl-dev \
     && pip install -r requirements.txt \
-    && python manage.py migrate --noinput \
     && apk del build-deps
 
 COPY . /app/
