@@ -6,15 +6,23 @@ Example: [django-movie-api.herokuapp.com](https://django-movie-api.herokuapp.com
 
 Available endpoints: 
 - /movies GET - List movies added to database
-- /movies POST - Add movie to database, required movie title in request body, 
-    data from [omdbapi.com](http://www.omdbapi.com/), validation based on movie title
+    * allow ordering for id, title, released, runtime, writer and director fields
+- /movies POST - Add movie to database, data from [omdbapi.com](http://www.omdbapi.com/), validation based on movie title
+    * required movie title in request body
 - /comments GET - List all comments added to movies in db
-- /comments POST - Add comment to movies in db, required movie id and text,
-    author is optional
- - /top GET - List most commented movies in given data range,
-    specifying data range is required
+    * allow ordering for all fields 
+    * allow filtering based on commented movie
+- /comments POST - Add comment to movies in db, request body params:
+    * movie and text are required
+    * posting author is optional
+    * add_date is default today
+ - /top GET - List most commented movies in given date range,
+    specifying date range is required,
+    query params: 
+    * start-date=DD-MM-YYY
+    * end-date=DD-MM-YYY
 
-Requirements: **python 3.7+**.
+Requirements: **python 3.6+**.
 
 Running app locally(on Linux):
 1. Copy git repository.
@@ -22,5 +30,4 @@ Running app locally(on Linux):
 3. Run: docker-compose build
 3. Run: docker-compose up -d
 4. Server should run on: localhost:8000
-
 
