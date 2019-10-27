@@ -18,6 +18,7 @@ class MoviesView(mixins.CreateModelMixin,
                  generics.GenericAPIView):
     """
     List all movies or add a new movie
+    Note for POST method you need specify only movie title, remained data will be fetched from external source
     """
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
