@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 
@@ -5,8 +7,8 @@ class TimeModel(models.Model):
     """
     Abstract model for storing instance time data
     """
-    mod_date = models.DateTimeField(auto_now=True)
-    add_date = models.DateTimeField(auto_now_add=True)
+    mod_datetime = models.DateTimeField(auto_now=True)
+    add_datetime = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         abstract = True
@@ -42,6 +44,7 @@ class Comment(TimeModel):
     movie = models.ForeignKey(Movie, related_name='movies', on_delete=models.CASCADE)
     text = models.TextField()
     author = models.CharField(max_length=50, blank=True)
+    add_date = models.DateField(default=datetime.date.today)
 
     def __str__(self):
         return "%s %s" % (self.movie, self.author if self.author else "")
