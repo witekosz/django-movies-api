@@ -24,10 +24,9 @@ SECRET_KEY = '_f4nq&oewo!m8a11vwx+9t_1p48kz*0up1b&nn327-yp%a6(q)'
 SECRET_KEY = os.environ.get('SECRET_KEY', default='foo')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 DEBUG = int(os.environ.get('DEBUG', default=0))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-movie-api.herokuapp.com', 'localhost', '127.0.0.1', ]
 
 
 # Application definition
