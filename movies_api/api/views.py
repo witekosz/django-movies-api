@@ -17,7 +17,7 @@ class MoviesView(mixins.CreateModelMixin,
                  mixins.ListModelMixin,
                  generics.GenericAPIView):
     """
-    List all movies, or create a new movie.
+    List all movies or add a new movie
     """
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
@@ -51,7 +51,8 @@ class CommentsView(mixins.CreateModelMixin,
                  mixins.ListModelMixin,
                  generics.GenericAPIView):
     """
-    List all comments, or create a new movie.
+    List all comments or comment a movie
+    For API testing purposes add_date can be also specified
     """
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
@@ -69,6 +70,16 @@ class CommentsView(mixins.CreateModelMixin,
 def get_top_movies(request):
     """
     List movies rating based of comments in given date range
+    ---
+    parameters:
+    - name: start-date
+        description: Date in format DD-MM-YYYY
+        required: true
+        type: string
+    - name: end-date
+        description: Date in format DD-MM-YYYY
+        required: true
+        type: string
     """
 
     if ('start-date' not in request.query_params) or ('end-date' not in request.query_params):
