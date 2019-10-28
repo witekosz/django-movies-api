@@ -1,10 +1,9 @@
-from datetime import datetime
-
 import requests
 import urllib.parse
 
+from datetime import datetime
 
-API_KEY = '338b2a2f'
+from django.conf import settings
 
 
 def get_movie_data_from_title(title):
@@ -14,7 +13,7 @@ def get_movie_data_from_title(title):
     :return:
     """
     encoded_title = urllib.parse.quote_plus(title)
-    api_route = f'http://www.omdbapi.com/?t={encoded_title}&apikey={API_KEY}'
+    api_route = f'http://www.omdbapi.com/?t={encoded_title}&apikey={settings.OMDBAPI_API_KEY}'
 
     req = requests.get(api_route)
 
