@@ -22,7 +22,10 @@ Available endpoints:
     * start-date=DD-MM-YYY
     * end-date=DD-MM-YYY
 
-Requirements: **python 3.6+**, latest **docker** and **docker comppose**.
+Requirements:
+- **python 3.6+**
+- latest **docker** 
+- latest **docker comppose**.
 
 ### Development
 
