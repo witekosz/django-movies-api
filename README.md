@@ -25,7 +25,7 @@ Available endpoints:
 Requirements:
 - **python 3.6+**
 - latest **docker** 
-- latest **docker comppose**.
+- latest **docker compose**
 
 ### Development
 
