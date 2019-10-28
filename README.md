@@ -28,7 +28,7 @@ Requirements: **python 3.6+**, latest **docker** and **docker comppose**.
 
 Uses default sqlite database and Django development server.
 
-Running app by docker compose locally(on Linux):
+Run app by docker compose locally(on Linux):
 1. Open terminal
 2. Copy git repository
 3. cd django_movies_api
