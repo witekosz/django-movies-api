@@ -31,10 +31,23 @@ Uses default sqlite database and Django development server.
 Run app by docker compose locally(on Linux):
 1. Open terminal
 2. Copy git repository
-3. cd django_movies_api
-4. Run: docker-compose build
-5. Run: docker-compose up -d
-6. Server should run on: localhost:8000
+3. Go to project directory:
+    ```sh
+    $ cd django_movies_api
+    ```
+4. Build images:
+    ```sh 
+   $ docker-compose build
+   ```
+5. Run containers:
+    ```sh
+    $ docker-compose up -d
+    ```
+6. Create database:
+    ```sh
+    $ docker-compose exec web python manage.py migrate --noinput
+    ```
+6. Server should be running on: [localhost:8000](http://localhost:8000/)
 
 ### Production
 
